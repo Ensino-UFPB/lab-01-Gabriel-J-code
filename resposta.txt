@@ -1,1 +1,154 @@
 Coloque aqui todas as respostas das práticas indicadas no README.md
+
+1.1
+	Rede: 172.18.0.2
+	Mascara: (Genmask): 255.255.0.0
+1.2
+	Roteador padrão: 172.18.0.1
+1.3
+	O comando 'route -n' listou 2 rotas ao todo.
+
+2.1
+	O IP da interface de rede é 172.18.0.2.
+2.2
+	A rede é 172.18.0.0 e a máscara é /16 (equivalente a 255.255.0.0).
+2.3
+	O nome da interface de rede principal é eth0.
+
+3
+	www.google.com: 172.217.30.68
+	www.whitehouse.gov: 192.0.66.51
+	www.rnp.br: 104.18.27.22 e 104.18.26.22
+	www.ufpb.br: 150.165.254.52
+
+4.1
+	loopback: '''ping 127.0.0.1
+	PING 127.0.0.1 (127.0.0.1): 56 data bytes
+	64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.033 ms
+	64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.033 ms
+	64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.054 ms
+	.
+	.
+	.
+	64 bytes from 127.0.0.1: icmp_seq=146 ttl=64 time=0.035 ms
+	64 bytes from 127.0.0.1: icmp_seq=147 ttl=64 time=0.032 ms
+	64 bytes from 127.0.0.1: icmp_seq=148 ttl=64 time=0.032 ms
+	149 packets transmitted, 149 packets received, 0% packet loss
+	round-trip min/avg/max/stddev = 0.026/0.037/0.163/0.000 ms'''
+	tempo medio 0.037 ms
+
+	meu ip: '''PING 172.18.0.2 (172.18.0.2): 56 data bytes
+	64 bytes from 172.18.0.2: icmp_seq=0 ttl=64 time=0.041 ms
+	64 bytes from 172.18.0.2: icmp_seq=1 ttl=64 time=0.032 ms
+	64 bytes from 172.18.0.2: icmp_seq=2 ttl=64 time=0.035 ms
+	64 bytes from 172.18.0.2: icmp_seq=3 ttl=64 time=0.044 ms
+	64 bytes from 172.18.0.2: icmp_seq=4 ttl=64 time=0.037 ms
+	64 bytes from 172.18.0.2: icmp_seq=5 ttl=64 time=0.049 ms
+	64 bytes from 172.18.0.2: icmp_seq=6 ttl=64 time=0.037 ms
+	64 bytes from 172.18.0.2: icmp_seq=7 ttl=64 time=0.035 ms
+	64 bytes from 172.18.0.2: icmp_seq=8 ttl=64 time=0.033 ms
+	64 bytes from 172.18.0.2: icmp_seq=9 ttl=64 time=0.050 ms
+	64 bytes from 172.18.0.2: icmp_seq=10 ttl=64 time=0.032 ms
+	64 bytes from 172.18.0.2: icmp_seq=11 ttl=64 time=0.032 ms
+	64 bytes from 172.18.0.2: icmp_seq=12 ttl=64 time=0.032 ms
+	64 bytes from 172.18.0.2: icmp_seq=13 ttl=64 time=0.032 ms
+	64 bytes from 172.18.0.2: icmp_seq=14 ttl=64 time=0.032 ms
+	64 bytes from 172.18.0.2: icmp_seq=15 ttl=64 time=0.034 ms
+	^C--- 172.18.0.2 ping statistics ---
+	16 packets transmitted, 16 packets received, 0% packet loss
+	round-trip min/avg/max/stddev = 0.032/0.037/0.050/0.000 ms'''
+	media 0.037 ms
+
+4.2
+	www.ufpb.br: min/avg/max/stddev = 25.507/34.028/41.613/5.625 ms
+
+	www.yahoo.com: min/avg/max/stddev = 169.186/170.358/178.543/2.159 ms
+
+	www.brasil.gov.br: min/avg/max/stddev = 75.496/76.545/78.558/0.868 ms
+
+	www.dce.ufpb.br: Inacessivel
+    	mensagem: 'ping: unknown host'
+
+4.3
+    
+	www.google.com: min/avg/max/stddev = 58.202/59.189/60.315/0.714 ms
+
+	www.rnp.br: min/avg/max/stddev = 58.425/60.240/73.125/3.755 ms
+
+	www.whitehouse.gov: min/avg/max/stddev = 58.267/58.867/59.215/0.289 ms
+
+	Vários fatores podem influenciar na diferença dos tempos no ping das rotas, como a distância até o destino, a quantidade de intermediários até ele, o tráfego da rede, ou mesmo a velocidade de resposta de cada roteador.
+
+5
+	Várias rotas retornaram apenas asteriscos '*', isso não significa problema na rede, apenas que essas máquinas foram configuradas para não fornecer informações sobre elas.
+	Nos 3 exemplos a resposta foi a mesma:
+	'''
+	1 172.18.0.1 (172.18.0.1)  0.429 ms  0.381 ms  0.358 ms
+	2  * * *
+	3  * * *
+	.
+	.
+	.
+	28  * * *
+	29  * * *
+	30  * * *
+	'''
+
+6.1
+	Active Internet connections (only servers)
+	Proto Recv-Q Send-Q Local Address       	Foreign Address     	State   	PID/Program name
+	tcp    	0  	0 127.0.0.11:40035    	0.0.0.0:*           	LISTEN  	-  	 
+
+	udp    	0  	0 127.0.0.11:36393    	0.0.0.0:*                       	-  	 
+6.2:
+	Kernel IP routing table
+	Destination 	Gateway     	Genmask     	Flags   MSS Window  irtt Iface
+	default     	172.18.0.1  	0.0.0.0     	UG    	0 0      	0 eth0
+	172.18.0.0  	0.0.0.0     	255.255.0.0 	U     	0 0      	0 eth0
+
+	A resposta foi muito próxima, sendo a uma diferença que o primeiro valor no destination do comando route tinha 0.0.0.0 no lugar do default do netstar. E no route tinha as colunas Metric e Ref que foram substituídas por MSS e Window, entretanto o valor foi 0 em todas as colunas
+
+7.1
+	O servidor respondeu, entretanto afirmou que está fechado para conexões de host externos (Connection closed by foreign host.).
+7.2
+	Não teve conexão, a mensagem implica que o nome ou serviço não é reconhecido, o que implica que deve ser um problema de rede.
+
+8.1 + 8.2
+	O mtr é útil para diagnosticar problemas de conectividade, monitorar a performance da rede, identificar instabilidades e quedas, além de auxiliar na solução de problemas com provedores de internet. Ele permite detectar aumentos de latência, perda de pacotes e gargalos em roteadores intermediários, sendo essencial para otimizar redes, analisar conexões VPN e garantir um tráfego eficiente.
+
+8.3
+
+	660dd35ddb4f (172.18.0.2) -> www.google.com (172.217.28.132)             	2025-02-10T14:30:53+0000
+                                                                                    	Packets           	Pings
+	Host                                                                                                              	Loss%   Snt   Last   Avg  Best  Wrst StDev
+	1. 172.18.0.1                                                                                                      	0.0% 	7	0.1   0.1   0.0   0.1   0.0
+	2. 172.217.28.132                                                                                                 	14.3% 	7   57.7  57.9  57.7  58.3   0.2
+
+	660dd35ddb4f (172.18.0.2) -> www.ufpb.br (150.165.254.52) 	2025-02-10T14:29:45+0000
+                                                                                    	Packets           	Pings
+	Host                                                                         	Loss%   Snt   Last   Avg  Best  Wrst StDev
+	1. 172.18.0.1                                                                 	0.0%	18	0.1   0.1   0.0   0.1   0.0
+	2. 150.165.254.52                                                             	0.0%	18   28.6  29.4  24.8  40.2   5.1
+
+8.4
+	Analisando o Resultado
+
+	A coluna Loss% mostra qual é a porcentagem de perda em determinado salto;
+	A coluna Sent ou SNT mostra quantos pacotes foram enviados;
+	A coluna Last mostra o tempo obtido para o último pacote;
+	A coluna AVG ou AVRG mostra a média de tempo em determinado salto;
+	A coluna Best mostra o melhor tempo em determinado salto;
+	A coluna WRST ou WORST mostra o pior tempo em determinado salto;
+
+	É importante observar que cada linha mostra o resultado do teste para cada salto, sendo que o primeiro salto é o de origem e o último de destino.
+
+	--------------------------
+
+	Como esses Dados Ajudam a Diagnosticar Problemas:
+
+    	Identificar gargalos: Se a perda de pacotes ocorrer em um salto específico, pode-se isolar o problema para aquele roteador ou segmento da rede.
+
+    	Analisar a estabilidade: Se o jitter for muito alto ou houver picos de latência, isso pode indicar instabilidade na rede, que pode ser causada por congestionamento ou problemas de hardware.
+    	Achar falhas em pontos específicos da rede: A partir dos saltos, é possível identificar qual parte da rede (local, provedores de internet ou servidores externos) está apresentando problemas, permitindo um diagnóstico mais preciso.
+
+    	Em resumo, o mtr oferece uma visão detalhada sobre o caminho dos pacotes e pode ajudar a detectar problemas de latência, perda de pacotes e instabilidade na rede. A partir dessa informação, é possível agir para resolver falhas de rede de forma mais eficiente.
